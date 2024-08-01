@@ -1,0 +1,62 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>随机排三</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f0f8ff; /* 背景は水色です */  
+            text-align: center;  
+            padding: 20px;  
+        }  
+        h1 {  
+            color: #333; /* ダークタイトルです */  
+            font-size: 2em; /* タイトルフォントサイズです */  
+        }  
+        button {  
+            background-color: #4285f4; /* ボタンの色です */  
+            color: white; /* ボタンの色です */  
+            border: none; /* 額縁なしです */  
+            padding: 15px 25px; /* 内辺距離ボタンです */  
+            font-size: 1.2em; /* ボタンフォントサイズです */  
+            border-radius: 5px; /* 角が丸い */  
+            cursor: pointer; /* マウスポインタスタイルです */  
+            transition: background-color 0.3s, transform 0.3s; /* アニメーション効果です */  
+        }  
+        button:hover {  
+            background-color: #357ae8; /* ホバリング時のボタンの色です */  
+            transform: scale(1.05); /* ホバリング時にわずかに大きくなります */  
+        }  
+        #result {  
+            margin-top: 20px; /* 結果的に上の距離です */  
+            font-size: 1.5em; /* テキストサイズです */  
+            color: #e74c3c; /* 結果テキスト色です */  
+        }  
+    </style>  
+</head>  
+<body>  
+
+<h1>随机排三号码</h1>  
+<button id="generateButton">生成随机号码</button>  
+<p id="result"></p>  
+
+<script>  
+    function generateRandomNumbers() {  
+        let numbers = [];  
+        for (let i = 0; i < 3; i++) {  
+            const randomNumber = Math.floor(Math.random() * 10);  
+            numbers.push(randomNumber);  
+        }  
+        return numbers.join('');  
+    }  
+
+    document.getElementById('generateButton').addEventListener('click', function() {  
+        const randomNumbers = generateRandomNumbers();  
+        document.getElementById('result').textContent = `随机排三号码: ${randomNumbers}`;  
+    });  
+</script>  
+
+</body>  
+</html>
